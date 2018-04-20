@@ -1,0 +1,22 @@
+<div class="container color-dark">
+  <div class="col"> 
+    <p>Authentication</p>
+  </div>
+  <div class="col"> 
+    <p>APPLICATION USERS: ({{UserCount}})</p>
+  </div>
+</div>
+<div class="container color-light"  [@goals]="users.length">
+  <div class="col"> 
+    <p class="sm"> use this form to sign in </p>
+    <form>
+      <input type="text" class="txt" name="username" placeholder="username" [(ngModel)]="UserText">
+      <input type="password" class="txt" name="password" placeholder="****">
+      <br>
+      <input type="submit" class="btn" [value]="btnText" (click)="addUser()">
+    </form>
+  </div>
+  <div class="col"> 
+    <p class="life-container" *ngFor="let user of users ; let i=index" (click)="removeItem(i)">{{user}}</p>
+  </div>
+</div>
